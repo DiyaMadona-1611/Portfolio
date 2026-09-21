@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Diya Madona — Designer, Visual Storyteller</title>
+<meta content="Portfolio of Diya Madona — graphic designer and computer science student." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#0b1020; --paper:#f7f3ea; --ink:#111525; --muted:#aab2c7;
+  --lime:#d8ff4f; --lilac:#b9a7ff; --coral:#ff7b6b; --sky:#76ddff;
+  --line:rgba(255,255,255,.13); --card:#11182c;
+  --radius:28px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:#fff;font-family:"DM Sans",sans-serif;overflow-x:hidden}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:100;
+  opacity:.055;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+::selection{background:var(--lime);color:var(--ink)}
+.wrap{width:min(1240px,calc(100% - 40px));margin:auto}
+.nav{
+  position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:90;
+  width:min(900px,calc(100% - 28px));padding:8px 9px;
+  border:1px solid rgba(255,255,255,.16);border-radius:999px;
+  background:rgba(11,16,32,.72);backdrop-filter:blur(20px);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.logo{width:46px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--lime);color:var(--ink);font-weight:800;letter-spacing:-1px}
+.navlinks{display:flex;gap:4px}.navlinks a{padding:10px 14px;border-radius:999px;font-size:13px;font-weight:700;color:#dce2f0}
+.navlinks a:hover{background:#fff;color:var(--ink)}
+.nav-cta{background:#fff!important;color:var(--ink)!important}
+.hero{min-height:100svh;position:relative;display:grid;align-items:center;padding:150px 0 90px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:50px;align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:9px;padding:8px 12px;border:1px solid rgba(216,255,79,.45);border-radius:999px;color:var(--lime);font-size:12px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase}
+.kicker i{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 14px var(--lime);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{transform:scale(1.8);opacity:.4}}
+h1,h2,h3,.display{font-family:"Space Grotesk",sans-serif}
+h1{font-size:clamp(64px,9.7vw,138px);line-height:.82;letter-spacing:-7px;margin:28px 0 30px}
+h1 .line{display:block}.accent{color:var(--lime)}.outline{color:transparent;-webkit-text-stroke:2px #fff}
+.hero-copy{max-width:670px;font-size:19px;line-height:1.7;color:#c7cede}
+.hero-copy b{color:#fff}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:14px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.24);font-weight:800;transition:.25s}
+.btn:hover{transform:translateY(-5px) rotate(-1deg)}
+.btn.primary{background:var(--lime);color:var(--ink);border-color:var(--lime)}
+.btn.dark{background:rgba(255,255,255,.06)}
+.hero-art{position:relative;min-height:650px;display:grid;place-items:center}
+.orbit{position:absolute;width:570px;height:570px;border:1px dashed rgba(216,255,79,.35);border-radius:50%;animation:spin 24s linear infinite}
+.orbit:after{content:"";position:absolute;width:12px;height:12px;background:var(--lime);border-radius:50%;left:48px;top:55px;box-shadow:0 0 24px var(--lime)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.photo{
+  width:min(385px,72%);aspect-ratio:.77;position:relative;z-index:2;
+  border:10px solid var(--paper);border-radius:210px 210px 35px 35px;
+  box-shadow:25px 30px 80px rgba(0,0,0,.4);transform:rotate(2deg);
+  overflow:hidden;background:#ddd;
+}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:center 28%}
+.float{
+  position:absolute;z-index:4;padding:12px 16px;border:2px solid var(--ink);color:var(--ink);
+  font-weight:800;box-shadow:7px 7px 0 rgba(0,0,0,.4);border-radius:15px
+}
+.f1{right:2%;top:16%;background:var(--coral);transform:rotate(7deg);animation:bob 3.5s ease-in-out infinite}
+.f2{left:0;bottom:15%;background:var(--sky);transform:rotate(-7deg);animation:bob 4s .4s ease-in-out infinite}
+.f3{right:7%;bottom:6%;background:var(--lilac);transform:rotate(4deg);animation:bob 3.8s .8s ease-in-out infinite}
+@keyframes bob{50%{translate:0 -12px}}
+.star{position:absolute;color:var(--lime);font-size:45px}.s1{left:5%;top:12%;rotate:20deg}.s2{right:1%;top:39%;font-size:30px;rotate:-20deg}
+.marquee{border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;background:var(--lime);color:var(--ink)}
+.marquee-track{display:inline-flex;animation:marquee 22s linear infinite}
+.marquee span{font-family:"Space Grotesk";font-size:20px;font-weight:800;padding:15px 22px}
+@keyframes marquee{to{transform:translateX(-50%)}}
+.section{padding:125px 0}
+.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:42px}
+.eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--lime);font-weight:800}
+.section h2{font-size:clamp(44px,6.5vw,82px);line-height:.9;letter-spacing:-4px;margin:12px 0 0}
+.section-intro{max-width:430px;color:var(--muted);line-height:1.7}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.about-card{border:1px solid var(--line);border-radius:var(--radius);padding:34px;background:linear-gradient(135deg,#141d35,#0e1528);min-height:330px}
+.about-card.big{background:var(--paper);color:var(--ink);transform:rotate(-1deg)}
+.about-card p{font-size:22px;line-height:1.45;margin:0}
+.about-card .mini{font-size:12px;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;opacity:.55;margin-bottom:28px}
+.tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:30px}
+.tag{padding:9px 12px;border:1px solid rgba(0,0,0,.15);border-radius:999px;font-size:12px;font-weight:800}
+.tag:nth-child(3n){background:var(--lime)}.tag:nth-child(3n+1){background:var(--lilac)}.tag:nth-child(3n+2){background:var(--sky)}
+.experience{display:grid;gap:16px}
+.exp{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--card);padding:28px;
+  display:grid;grid-template-columns:90px 1fr auto;gap:22px;align-items:start;position:relative;overflow:hidden;transition:.3s
+}
+.exp:hover{transform:translateX(7px);border-color:rgba(216,255,79,.5)}
+.exp:before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-90px;top:-90px;background:var(--glow);opacity:.13;filter:blur(8px)}
+.num{font-family:"Space Grotesk";font-size:48px;font-weight:700;color:#3b455d}
+.exp h3{font-size:31px;margin:0 0 4px}.role{font-size:12px;color:var(--lime);font-weight:800;letter-spacing:1px;text-transform:uppercase}
+.exp p{color:var(--muted);line-height:1.6;max-width:680px;margin:12px 0 0}
+.exp .arrow{font-size:28px;transition:.25s}.exp:hover .arrow{transform:rotate(-45deg)}
+.sofueled{--glow:var(--coral)}.voorent{--glow:var(--sky)}.smallfare{--glow:var(--lilac)}
+/* Editorial is deliberately its own space */
+.editorial{background:var(--paper);color:var(--ink);padding:120px 0;position:relative;overflow:hidden}
+.editorial .eyebrow{color:#6752d9}
+.editorial h2{max-width:850px}
+.editorial-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:25px;margin-top:45px}
+.mag{background:#111525;color:#fff;border-radius:30px;min-height:480px;padding:32px;position:relative;overflow:hidden;transform:rotate(-1.2deg)}
+.mag .bigtype{font-family:"Space Grotesk";font-size:clamp(60px,8vw,120px);line-height:.78;letter-spacing:-7px;margin-top:50px}
+.mag .scribble{position:absolute;right:28px;top:30px;color:var(--lime);font-size:48px;rotate:12deg}
+.editorial-copy{padding:35px;border:2px solid var(--ink);border-radius:30px;min-height:480px;display:flex;flex-direction:column;justify-content:space-between}
+.editorial-copy h3{font-size:42px;line-height:.95;margin:0}
+.editorial-copy p{font-size:18px;line-height:1.7}
+.pill{display:inline-block;padding:9px 12px;border:1px solid var(--ink);border-radius:999px;font-size:11px;font-weight:800;margin:4px}
+.projects{background:#151c32}
+.project-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.project{
+  min-height:310px;border-radius:30px;padding:27px;position:relative;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:space-between;transition:.35s;cursor:pointer
+}
+.project:hover{transform:translateY(-10px) rotate(-1deg)}
+.project:nth-child(1){grid-column:span 7;background:var(--lime);color:var(--ink)}
+.project:nth-child(2){grid-column:span 5;background:var(--lilac);color:var(--ink)}
+.project:nth-child(3){grid-column:span 5;background:var(--coral);color:var(--ink)}
+.project:nth-child(4){grid-column:span 7;background:var(--sky);color:var(--ink)}
+.project .label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:900}
+.project h3{font-size:clamp(35px,5vw,66px);line-height:.85;letter-spacing:-3px;margin:20px 0 0;max-width:580px}
+.project p{max-width:420px;line-height:1.55;font-weight:600}
+.project .corner{position:absolute;right:22px;bottom:20px;font-size:35px}
+.project small{opacity:.65;font-weight:700}
+
+.about-highlight{font-family:"Space Grotesk",sans-serif;font-size:clamp(38px,5vw,64px);line-height:.94;letter-spacing:-3px;margin:0 0 22px;color:#111525}
+.about-support{font-size:17px;line-height:1.65;max-width:560px;color:#3d4352;margin:0}
+.experience-stack{display:grid;gap:18px}
+.experience-detail{display:grid;grid-template-columns:90px 1fr;gap:26px;padding:34px;border:1px solid var(--line);border-radius:30px;background:linear-gradient(135deg,#121a30,#0d1426);position:relative;overflow:hidden;transition:.3s}
+.experience-detail:after{content:"";position:absolute;width:280px;height:280px;border-radius:50%;right:-150px;top:-150px;background:linear-gradient(135deg,var(--lime),var(--lilac));opacity:.08;filter:blur(12px)}
+.experience-detail:hover{transform:translateY(-5px);border-color:rgba(216,255,79,.42)}
+.experience-number{font-family:"Space Grotesk";font-size:54px;line-height:1;color:#3c465e;font-weight:700}
+.experience-main h3{font-family:"Space Grotesk";font-size:clamp(40px,5vw,68px);letter-spacing:-4px;line-height:.88;margin:8px 0 15px}
+.experience-main h3 span{font-size:.45em;color:var(--lime);letter-spacing:-1px}
+.experience-lead{font-size:18px;line-height:1.65;color:#d4d9e5;max-width:850px}
+.work-points{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:12px;max-width:850px}
+.work-points li{color:#aab2c7;line-height:1.55;padding-left:25px;position:relative}
+.work-points li:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime);position:absolute;left:0;top:.55em;box-shadow:0 0 12px rgba(216,255,79,.4)}
+.image-slot{background:linear-gradient(135deg,#171e35,#26345b);overflow:hidden;min-height:320px}
+.image-slot img{display:block;width:100%;height:100%;min-height:320px;object-fit:cover}
+.project-image-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.project-image{min-height:470px;border-radius:30px;overflow:hidden;background:linear-gradient(135deg,#151c32,#29365e);border:1px solid rgba(255,255,255,.12);transition:.35s}
+.project-image:hover{transform:translateY(-8px) rotate(-.6deg);border-color:rgba(216,255,79,.5)}
+.project-image img{display:block;width:100%;height:100%;min-height:470px;object-fit:cover}
+.tools{display:flex;flex-wrap:wrap;gap:12px;margin-top:35px}
+.tool{padding:15px 18px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.045);font-weight:800}
+.contact{padding:100px 0}
+.contact-box{border-radius:35px;background:linear-gradient(120deg,#242d4a,#493f72);padding:55px;position:relative;overflow:hidden}
+.contact-box:after{content:"LET'S TALK";position:absolute;right:-40px;bottom:-35px;font-family:"Space Grotesk";font-weight:700;font-size:120px;color:rgba(255,255,255,.06);rotate:-8deg}
+.contact h2{font-size:clamp(55px,8vw,105px);line-height:.8;letter-spacing:-6px;margin:0 0 25px}
+.contact p{color:#d1d7e7;line-height:1.7}
+footer{padding:25px 0 45px;border-top:1px solid var(--line);color:#7f899f;font-size:13px;display:flex;justify-content:space-between}
+.reveal{opacity:0;transform:translateY(35px);transition:opacity .75s ease,transform .75s ease}.reveal.show{opacity:1;transform:none}
+.cursor{position:fixed;width:22px;height:22px;border:2px solid var(--lime);border-radius:50%;pointer-events:none;z-index:200;mix-blend-mode:difference;translate:-50% -50%;transition:width .2s,height .2s;display:none}
+@media (pointer:fine){.cursor{display:block}}
+@media(max-width:850px){
+  .experience-detail{grid-template-columns:55px 1fr;padding:25px 20px}
+  .experience-number{font-size:34px}
+  .project-image-grid{grid-template-columns:1fr}
+
+  .navlinks a:not(.nav-cta){display:none}
+  .hero-grid,.about,.editorial-grid{grid-template-columns:1fr}
+  .hero-art{min-height:560px}.orbit{width:480px;height:480px}
+  .section-head{display:block}.section-intro{margin-top:20px}
+  .exp{grid-template-columns:55px 1fr}.exp .arrow{display:none}
+  .project:nth-child(n){grid-column:span 12}
+}
+@media(max-width:520px){
+  .wrap{width:min(100% - 28px,1240px)}
+  h1{letter-spacing:-4px}.hero{padding-top:120px}
+  .hero-art{min-height:480px}.orbit{width:360px;height:360px}.photo{width:280px}
+  .f1{right:-4%}.f2{left:-4%}.f3{right:-2%}
+  .section{padding:85px 0}.editorial{padding:85px 0}
+  .about-card,.editorial-copy,.mag,.contact-box{padding:25px}
+  .exp{padding:22px 18px}
+  .num{font-size:32px}.exp h3{font-size:25px}
+  .contact-box{padding:35px 25px}
+  footer{display:block}footer span+span{display:block;margin-top:8px}
+}
+
+/* === V3 portfolio upgrades === */
+.hero{background:radial-gradient(circle at 78% 25%,rgba(118,221,255,.16),transparent 28%),radial-gradient(circle at 18% 72%,rgba(185,167,255,.14),transparent 30%)}
+.hero:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(135deg,rgba(216,255,79,.035),transparent 42%,rgba(185,167,255,.06));}
+.hero-grid{position:relative;z-index:2}
+.spin-badge{position:absolute;right:4%;top:3%;width:145px;height:145px;border-radius:50%;display:grid;place-items:center;background:var(--lime);color:var(--ink);z-index:5;box-shadow:0 18px 45px rgba(216,255,79,.15);animation:floatBadge 4s ease-in-out infinite}
+.spin-badge svg{position:absolute;width:100%;height:100%;animation:spin 14s linear infinite}
+.spin-badge .badge-center{width:58px;height:58px;border-radius:50%;background:#111525;display:grid;place-items:center;color:var(--lime);font-size:25px;font-weight:900}
+@keyframes floatBadge{50%{transform:translateY(-12px) rotate(4deg)}}
+.hero-art .orbit{animation:spin 20s linear infinite}
+.hero-art .orbit:nth-of-type(2){width:430px;height:430px;border-color:rgba(118,221,255,.22);animation-direction:reverse;animation-duration:28s}
+.hero-art .orbit:nth-of-type(2):after{background:var(--sky);box-shadow:0 0 20px var(--sky);left:auto;right:25px;top:90px}
+.work-showcase{margin-top:28px;display:grid;grid-template-columns:1fr 1.2fr;gap:22px;align-items:stretch}
+.work-copy{border:1px solid var(--line);border-radius:30px;padding:34px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.02));position:sticky;top:105px;height:max-content}
+.work-copy h3{font-size:46px;line-height:.9;letter-spacing:-3px;margin:12px 0}
+.work-copy p{color:var(--muted);line-height:1.7}.work-meta{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}.work-meta span{padding:8px 11px;border-radius:999px;background:rgba(255,255,255,.07);font-size:11px;font-weight:800;color:#e7ebf4}
+.work-gallery{display:grid;grid-template-columns:1.3fr .7fr;gap:14px}
+.work-gallery .shot{border-radius:24px;min-height:210px;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.13);background:#1a233a}
+.work-gallery .shot:first-child{grid-row:span 2;min-height:435px}
+.shot img{width:100%;height:100%;object-fit:cover;display:block}
+.shot .fake-art{position:absolute;inset:0;background:var(--g);display:grid;place-items:center;color:rgba(255,255,255,.9);font-family:'Space Grotesk';font-size:clamp(24px,3vw,48px);font-weight:700;letter-spacing:-2px;text-align:center;padding:20px}
+.shot .fake-art:after{content:"";position:absolute;width:55%;height:55%;border-radius:50%;right:-18%;top:-12%;background:rgba(255,255,255,.2);filter:blur(2px)}
+.shot .caption{position:absolute;left:14px;bottom:14px;background:rgba(8,12,25,.82);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:8px 11px;font-size:10px;font-weight:800;z-index:2}
+.case-study{margin-top:85px;padding:38px;border:1px solid var(--line);border-radius:32px;background:linear-gradient(135deg,rgba(118,221,255,.06),rgba(185,167,255,.04))}
+.case-study h4{font-family:'Space Grotesk';font-size:30px;margin:0 0 10px}.case-study p{color:var(--muted);line-height:1.7;max-width:760px}
+.enthral-gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:40px}.enthral-gallery .shot{grid-column:span 4;min-height:330px}.enthral-gallery .shot:nth-child(1){grid-column:span 8;min-height:450px}.enthral-gallery .shot:nth-child(4){grid-column:span 8}
+.tool-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:14px;margin-top:35px}.tool-card{padding:22px 10px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.04);text-align:center;transition:.25s;position:relative;overflow:hidden}.tool-card:before{content:"";position:absolute;inset:-70% -20%;background:linear-gradient(110deg,transparent,rgba(255,255,255,.11),transparent);transform:translateX(-80%) rotate(12deg);transition:.7s}.tool-card:hover:before{transform:translateX(80%) rotate(12deg)}.tool-card:hover{transform:translateY(-8px);border-color:rgba(216,255,79,.5)}.tool-icon{width:64px;height:64px;margin:auto;border-radius:18px;display:grid;place-items:center;background:#fff;padding:11px;position:relative;z-index:1}.tool-icon img{width:100%;height:100%;object-fit:contain}.tool-card strong{display:block;margin-top:12px;font-size:12px;position:relative;z-index:1}.tool-card small{display:block;margin-top:5px;color:#7f899f;position:relative;z-index:1}
+.gradient-text{background:linear-gradient(90deg,var(--lime),var(--sky),var(--lilac),var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent;background-size:250% 100%;animation:gradientMove 6s ease infinite}@keyframes gradientMove{50%{background-position:100% 0}}
+@media(max-width:850px){.work-showcase{grid-template-columns:1fr}.work-copy{position:relative;top:auto}.work-gallery{grid-template-columns:1fr 1fr}.work-gallery .shot:first-child{grid-row:auto;min-height:300px}.enthral-gallery .shot,.enthral-gallery .shot:nth-child(1),.enthral-gallery .shot:nth-child(4){grid-column:span 6}.tool-grid{grid-template-columns:repeat(4,1fr)}.spin-badge{right:0;top:0;transform:scale(.78)}}
+@media(max-width:520px){.work-gallery{grid-template-columns:1fr}.work-gallery .shot,.work-gallery .shot:first-child{min-height:250px}.enthral-gallery{grid-template-columns:1fr}.enthral-gallery .shot,.enthral-gallery .shot:nth-child(1),.enthral-gallery .shot:nth-child(4){grid-column:span 1}.tool-grid{grid-template-columns:repeat(2,1fr)}.spin-badge{width:105px;height:105px}.spin-badge .badge-center{width:44px;height:44px;font-size:18px}}
+
+/* === V5 refinements === */
+.about{grid-template-columns:1fr}
+.about-voice{min-height:430px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.about-voice:after{content:"DESIGN / CODE / IDEAS";position:absolute;right:-20px;bottom:-28px;font-family:"Space Grotesk";font-size:clamp(55px,9vw,125px);font-weight:700;letter-spacing:-7px;color:rgba(17,21,37,.07);transform:rotate(-5deg)}
+.craft-sticker{align-self:flex-start;padding:9px 13px;border-radius:999px;background:var(--lime);color:var(--ink);font-size:11px;font-weight:900;letter-spacing:1px;transform:rotate(-3deg);margin-bottom:28px}
+.about-voice .about-highlight{font-size:clamp(42px,6.5vw,86px);line-height:.9;letter-spacing:-4px;max-width:900px;position:relative;z-index:1}
+.about-voice .about-support{font-size:18px;max-width:720px;margin-top:25px;position:relative;z-index:1}
+.about-enjoy{min-height:300px;display:flex;flex-direction:column;justify-content:center}
+.experience-stack{display:grid;gap:42px}
+.experience-detail{border:1px solid var(--line);border-radius:34px;padding:34px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));overflow:hidden}
+.experience-detail:nth-child(1){background:linear-gradient(135deg,rgba(255,123,107,.12),rgba(255,255,255,.025) 48%)}
+.experience-detail:nth-child(2){background:linear-gradient(135deg,rgba(118,221,255,.11),rgba(255,255,255,.025) 48%)}
+.experience-detail:nth-child(3){background:linear-gradient(135deg,rgba(185,167,255,.12),rgba(255,255,255,.025) 48%)}
+.experience-gallery{display:grid;grid-template-columns:1.3fr .7fr .7fr;grid-template-rows:210px 210px;gap:14px;margin-top:30px}
+.experience-shot{position:relative;border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.12);background:linear-gradient(135deg,#151c32,#29365e);min-height:210px}
+.experience-shot:first-child{grid-row:span 2;min-height:434px}
+.experience-shot img{width:100%;height:100%;display:block;object-fit:cover;opacity:1;position:relative;z-index:1}
+.experience-shot img[src=""]{opacity:0}
+.experience-shot:before{content:"ADD IMAGE";position:absolute;inset:0;display:grid;place-items:center;font-family:"Space Grotesk";font-size:20px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.5);background:radial-gradient(circle at 25% 25%,rgba(118,221,255,.25),transparent 34%),linear-gradient(135deg,rgba(216,255,79,.09),rgba(185,167,255,.13));z-index:0}
+.experience-shot:has(img[src]:not([src=""])):before{display:none}
+.experience-shot span{position:absolute;right:12px;bottom:12px;z-index:3;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:rgba(8,12,25,.8);border:1px solid rgba(255,255,255,.18);font-size:10px;font-weight:900}
+.enthral-section{background:linear-gradient(135deg,#f7f3ea 0%,#eef4ff 48%,#f3eaff 100%);color:var(--ink)}
+.enthral-section .section-intro{color:#4c5365}
+.enthral-section .eyebrow{color:#6251db}
+.enthral-lead{display:grid;grid-template-columns:100px 1fr 150px;gap:28px;align-items:center;border:2px solid var(--ink);border-radius:34px;padding:36px;background:rgba(255,255,255,.38);position:relative;overflow:hidden}
+.enthral-number{font-family:"Space Grotesk";font-size:72px;font-weight:700;color:#c6cbe0}
+.enthral-lead h3{font-size:clamp(42px,6vw,76px);line-height:.85;letter-spacing:-4px;margin:10px 0 18px}
+.enthral-lead p{max-width:800px;line-height:1.7;color:#3d4352;font-size:17px}
+.enthral-orb{width:130px;height:130px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--lime),var(--lilac));font-size:55px;box-shadow:12px 15px 0 var(--ink);animation:floatBadge 4s ease-in-out infinite}
+.enthral-gallery .shot{background:linear-gradient(135deg,#c8d7ff,#efd8ff);border:2px solid rgba(17,21,37,.12)}
+.enthral-gallery .shot:before{background:radial-gradient(circle at 25% 25%,rgba(216,255,79,.45),transparent 32%),linear-gradient(135deg,rgba(118,221,255,.45),rgba(185,167,255,.45))}
+.enthral-gallery .shot img[src=""]{opacity:0}
+.enthral-gallery .caption{background:rgba(17,21,37,.84);color:#fff}
+.tool-grid{grid-template-columns:repeat(8,1fr)}
+.tool-card small{display:none}
+.tool-icon{background:#fff;border:1px solid rgba(255,255,255,.18)}
+.tool-icon img{object-fit:contain}
+@media(max-width:850px){.enthral-lead{grid-template-columns:65px 1fr}.enthral-orb{display:none}.experience-gallery{grid-template-columns:1fr 1fr;grid-template-rows:250px 250px}.experience-shot:first-child{grid-row:auto;min-height:250px}.tool-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:520px){.experience-gallery{grid-template-columns:1fr;grid-template-rows:auto}.experience-shot,.experience-shot:first-child{min-height:260px}.enthral-lead{grid-template-columns:1fr;padding:26px}.enthral-number{font-size:45px}.tool-grid{grid-template-columns:repeat(2,1fr)}}
+
+</style>
+</head>
+<body>
+<!-- Replace any .fake-art block with <img src="your-image.jpg" alt="Project description"> when you add real project artwork. -->
+<div class="cursor"></div>
+<nav class="nav">
+<a class="logo" href="#">DML</a>
+<div class="navlinks">
+<a href="#about">About</a><a href="#experience">Experience</a><a href="#editorial">Enthral</a><a href="#projects">Projects</a>
+<a class="nav-cta" href="#contact">Let's talk ↗</a>
+</div>
+</nav>
+<main>
+<section class="hero">
+<div class="wrap hero-grid">
+<div class="reveal">
+<span class="kicker"><i></i> Graphic designer · builder · curious human</span>
+<h1><span class="line">Make it</span><span class="line accent">feel.</span><span class="line outline">Then make</span><span class="line">it <span class="accent">work.</span></span></h1>
+<p class="hero-copy">Hi, I'm <b>Diya Madona Loy.</b> I turn ideas into visual identities, campaigns, digital experiences and tiny details that make people stop scrolling.</p>
+<div class="actions">
+<a class="btn primary" href="#projects">Explore my projects ↗</a>
+<a class="btn dark" href="#experience">See experience ↓</a>
+</div>
+</div>
+<div class="hero-art reveal">
+<div class="spin-badge"><svg aria-hidden="true" viewbox="0 0 145 145"><defs><path d="M72.5,72.5 m-54,0 a54,54 0 1,1 108,0 a54,54 0 1,1 -108,0" id="circlePath"></path></defs><text font-size="11" font-weight="800" letter-spacing="2"><textpath href="#circlePath">DESIGN • CODE • CREATE • REPEAT • </textpath></text></svg><div class="badge-center">✦</div></div>
+<div class="orbit"></div><div class="orbit"></div>
+<div class="photo"><img alt="Diya Madona" src="assets/profile.jpg"/></div>
+<span class="float f2">design + code ↗</span>
+<span class="float f3">hello! 👋</span>
+<span class="star s1">✦</span><span class="star s2">✳</span>
+</div>
+</div>
+</section>
+<div class="marquee"><div class="marquee-track">
+<span>DESIGN WITH PERSONALITY ✦</span><span>VISUAL STORIES ✦</span><span>DIGITAL EXPERIENCES ✦</span><span>GOOD IDEAS DESERVE GOOD DESIGN ✦</span>
+<span>DESIGN WITH PERSONALITY ✦</span><span>VISUAL STORIES ✦</span><span>DIGITAL EXPERIENCES ✦</span><span>GOOD IDEAS DESERVE GOOD DESIGN ✦</span>
+</div></div>
+<section class="section" id="about">
+<div class="wrap">
+<div class="section-head reveal">
+<div><div class="eyebrow">01 / A little about me</div><h2>I like smart ideas<br/>with a bit of chaos.</h2></div>
+<p class="section-intro">Graphic design is my main language. Computer science gives me another one. I like living in the space between visual thinking, digital content and building things.</p>
+</div>
+<div class="about">
+<article class="about-card big reveal about-voice">
+<span class="craft-sticker">Craftless MMA ✦</span>
+<p class="about-highlight"><b>Graphic design is my main language.</b></p>
+<p class="about-support">I use it to turn ideas into clear, expressive visual experiences — while my Computer Science background lets me understand the digital side too.</p>
+</article>
+<article class="about-card reveal about-enjoy">
+<div class="mini">Things I enjoy making</div>
+<div class="tags">
+<span class="tag">Social content</span><span class="tag">Campaign visuals</span><span class="tag">Editorial</span>
+<span class="tag">Brand visuals</span><span class="tag">Digital design</span><span class="tag">Web experiments</span>
+<span class="tag">Creative direction</span><span class="tag">Visual storytelling</span>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="section" id="experience">
+<div class="wrap">
+<div class="section-head reveal">
+<div><div class="eyebrow">02 / Experience</div><h2>Every experience<br/>gets its <span class="gradient-text">own world.</span></h2></div>
+<p class="section-intro">A closer look at what I actually worked on in each role — the design, content and creative responsibilities behind the work.</p>
+</div>
+<div class="experience-stack">
+<article class="experience-detail reveal" id="smallfare">
+<div class="experience-number">01</div>
+<div class="experience-main">
+<div class="eyebrow">December 2024 — April 2025</div>
+<h3>Small Fare<span>™</span></h3>
+<div class="work-meta"><span>Graphic Designer Intern</span><span>Social Media</span><span>Guerrilla Marketing</span></div>
+<p class="experience-lead">At Small Fare, I worked on visual content for a guerrilla marketing campaign for the company's own ticket-booking platform.</p>
+<ul class="work-points">
+<li>Designed <b>social media posters</b> for the campaign.</li>
+<li>Created <b>short-form Reels</b> built around the campaign concept.</li>
+<li>Contributed <b>creative concepts and visual design solutions</b> to support the campaign's brand engagement goals.</li>
+</ul>
+<div class="experience-gallery fare-gallery">
+<div class="experience-shot"><img alt="Small Fare work sample 01" src=""/><span>01</span></div>
+<div class="experience-shot"><img alt="Small Fare work sample 02" src=""/><span>02</span></div>
+<div class="experience-shot"><img alt="Small Fare work sample 03" src=""/><span>03</span></div>
+<div class="experience-shot"><img alt="Small Fare work sample 04" src=""/><span>04</span></div>
+</div>
+</div>
+</article>
+<article class="experience-detail reveal" id="voorent">
+<div class="experience-number">02</div>
+<div class="experience-main">
+<div class="eyebrow">March 2026 — June 2026</div>
+<h3>Voorent</h3>
+<div class="work-meta"><span>Social Media &amp; Marketing Intern</span><span>Product Visuals</span><span>Content</span></div>
+<p class="experience-lead">At Voorent, I worked across product visuals and social media content for the company's rental catalogue and marketing.</p>
+<ul class="work-points">
+<li>Designed <b>product listing images</b> for the company's entire rental product catalog.</li>
+<li>Created a <b>short-form Reel that reached 50K+ views</b>, driving strong audience engagement.</li>
+<li>Designed <b>marketing creatives using Canva</b>.</li>
+</ul>
+<div class="experience-gallery voorent-gallery">
+<div class="experience-shot"><img alt="Voorent work sample 01" src=""/><span>01</span></div>
+<div class="experience-shot"><img alt="Voorent work sample 02" src=""/><span>02</span></div>
+<div class="experience-shot"><img alt="Voorent work sample 03" src=""/><span>03</span></div>
+<div class="experience-shot"><img alt="Voorent work sample 04" src=""/><span>04</span></div>
+</div>
+</div>
+</article>
+<article class="experience-detail reveal" id="sofueled">
+<div class="experience-number">03</div>
+<div class="experience-main">
+<div class="eyebrow">July 2026</div>
+<h3>Sofueled</h3>
+<div class="work-meta"><span>Digital Marketing Intern</span><span>Content</span><span>Research</span></div>
+<p class="experience-lead">At Sofueled Media, I worked on high-volume social content focused on Goa-based travel and lifestyle.</p>
+<ul class="work-points">
+<li>Delivered <b>6 pieces of content per day</b>, including posts, creatives and short-form Reels.</li>
+<li>Wrote <b>Goa-based travel and lifestyle content</b> for the company's social media platforms.</li>
+<li>Researched and curated content highlighting <b>local places, experiences and events across Goa</b>.</li>
+</ul>
+<div class="experience-gallery sofueled-gallery">
+<div class="experience-shot"><img alt="Sofueled Goa seafood content post" src="assets/work/Seafood_Panaji.png"/><span>01</span></div>
+<div class="experience-shot"><img alt="Sofueled Goa food content post" src="assets/work/Panjim_Veg.png"/><span>02</span></div>
+<div class="experience-shot"><img alt="Sofueled Goa travel content post" src="assets/work/2_1_.png"/><span>03</span></div>
+<div class="experience-shot"><img alt="Sofueled cafe feature content post" src="assets/work/Cafe_Post_3_.png"/><span>04</span></div>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="editorial enthral-section" id="editorial">
+<div class="wrap">
+<div class="section-head reveal">
+<div><div class="eyebrow">03 / Enthral</div><h2>ENTHRAL<br/><span class="gradient-text">gets its own stage.</span></h2></div>
+<p class="section-intro">As Chief Editor of Enthral, I led content creation and editorial direction for the college magazine — shaping the publication's stories, visual language and overall editorial voice.</p>
+</div>
+<div class="enthral-lead reveal">
+<div class="enthral-number">03</div>
+<div>
+<div class="eyebrow">Chief Editor</div>
+<h3>Leading the <span class="gradient-text">editorial voice.</span></h3>
+<p>I was responsible for leading <b>content creation and editorial direction</b> for Enthral. This section is a visual record of that work — the publication, the layouts, the stories and the creative decisions behind them.</p>
+</div>
+<div class="enthral-orb">✦</div>
+</div>
+<div class="enthral-gallery reveal" id="enthral-gallery">
+<div class="shot image-slot"><img alt="Enthral work sample 01" src=""/><span class="caption">01 · Cover / feature</span></div>
+<div class="shot image-slot"><img alt="Enthral work sample 02" src=""/><span class="caption">02 · Editorial spread</span></div>
+<div class="shot image-slot"><img alt="Enthral work sample 03" src=""/><span class="caption">03 · Layout / story</span></div>
+<div class="shot image-slot"><img alt="Enthral work sample 04" src=""/><span class="caption">04 · Publication work</span></div>
+</div>
+</div>
+</section>
+<section class="section projects" id="projects">
+<div class="wrap">
+<div class="section-head reveal">
+<div><div class="eyebrow">04 / My projects</div><h2>Things I made<br/><span class="gradient-text">because I wanted to.</span></h2></div>
+<p class="section-intro">A separate space for my own projects. Just the work — four visual pieces that can speak for themselves.</p>
+</div>
+<div class="project-image-grid reveal">
+<div class="project-image"><img alt="Personal project 01" src=""/></div>
+<div class="project-image"><img alt="Personal project 02" src=""/></div>
+<div class="project-image"><img alt="Personal project 03" src=""/></div>
+<div class="project-image"><img alt="Personal project 04" src=""/></div>
+</div>
+</div>
+</section>
+<section class="section" id="toolbox">
+<div class="wrap">
+<div class="section-head reveal"><div><div class="eyebrow">05 / Toolbox</div><h2>Tools I actually<br/><span class="gradient-text">use to make things.</span></h2></div><p class="section-intro">The tools I use across visual design, digital content and creative work.</p></div>
+<div class="tool-grid reveal">
+<div class="tool-card"><div class="tool-icon"><img alt="Photoshop logo" src="assets/logos/photoshop-logo.svg"/></div><strong>Photoshop</strong></div>
+<div class="tool-card"><div class="tool-icon"><img alt="Illustrator logo" src="assets/logos/illustrator-logo.svg"/></div><strong>Illustrator</strong></div>
+<div class="tool-card"><div class="tool-icon"><img alt="Canva logo" src="assets/logos/canva-logo.svg"/></div><strong>Canva</strong></div>
+<div class="tool-card"><div class="tool-icon"><img alt="Figma logo" src="assets/logos/figma-logo.svg"/></div><strong>Figma</strong></div>
+<div class="tool-card"><div class="tool-icon"><img alt="Blender logo" src="assets/logos/blender-logo.svg"/></div><strong>Blender</strong></div>
+<div class="tool-card"><div class="tool-icon"><img alt="HTML logo" src="assets/logos/html-logo.svg"/></div><strong>HTML</strong></div>
+<div class="tool-card"><div class="tool-icon"><img alt="CSS logo" src="assets/logos/css-logo.svg"/></div><strong>CSS</strong></div>
+<div class="tool-card"><div class="tool-icon"><img alt="JavaScript logo" src="assets/logos/javascript-logo.svg"/></div><strong>JavaScript</strong></div>
+</div>
+</div>
+</section>
+<section class="contact" id="contact">
+<div class="wrap">
+<div class="contact-box reveal">
+<div class="eyebrow">06 / Say hello</div>
+<h2>Have an idea?<br/>Let's make it weird.</h2>
+<p>diyamadonaloy@gmail.com<br/>+91 9550122236</p>
+<a class="btn primary" href="mailto:diyamadonaloy@gmail.com">Email me ↗</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="wrap"><span>© 2026 Diya Madona Loy</span><span>Designed with curiosity ✦</span></footer>
+<script>
+const cursor=document.querySelector('.cursor');
+window.addEventListener('pointermove',e=>{
+  cursor.style.left=e.clientX+'px'; cursor.style.top=e.clientY+'px';
+});
+document.querySelectorAll('a,.project,.exp').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cursor.style.width='42px';cursor.style.height='42px'});
+  el.addEventListener('mouseleave',()=>{cursor.style.width='22px';cursor.style.height='22px'});
+});
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+document.querySelectorAll('.project').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const r=card.getBoundingClientRect();
+    const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+    card.style.transform=`perspective(700px) rotateX(${y*-4}deg) rotateY(${x*5}deg) translateY(-7px)`;
+  });
+  card.addEventListener('mouseleave',()=>card.style.transform='');
+});
+</script>
+</body>
+</html>
